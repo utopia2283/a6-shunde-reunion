@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一期一會 · A6 搣柴誌 ｜ 順德三日</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;700;900&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ink: #1a1a1a;
+            --ink-soft: #4a4a4a;
+            --ink-mute: #8a8a8a;
+            --paper: #fafaf7;
+            --paper-warm: #f4f1ea;
+            --line: #e8e3d8;
+            --accent: #b87333;
+            --accent-soft: #f0c674;
+            --gold: #d4a857;
+            --shadow-sm: 0 1px 2px rgba(26, 26, 26, 0.04);
+            --shadow-md: 0 4px 20px rgba(26, 26, 26, 0.06);
+            --shadow-lg: 0 12px 40px rgba(26, 26, 26, 0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Noto Serif SC', 'Cormorant Garamond', serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            background: rgba(250, 250, 247, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--line);
+            transition: all 0.3s ease;
+        }
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 18px 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            color: var(--ink);
+        }
+        .nav-brand em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: var(--ink-soft);
+            text-decoration: none;
+            letter-spacing: 0.04em;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover { color: var(--accent); }
+
+        /* HERO */
+        .hero {
+            position: relative;
+            min-height: 92vh;
+            display: flex;
+            align-items: flex-end;
+            color: white;
+            overflow: hidden;
+        }
+        .hero-bg {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 75%, rgba(0,0,0,0.85) 100%),
+                url('https://picsum.photos/seed/a6-reunion-hero/2000/1100') center/cover no-repeat;
+        }
+        .hero-content {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 120px 32px 80px;
+        }
+        .hero-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 24px;
+        }
+        .hero-eyebrow::before {
+            content: '';
+            width: 36px;
+            height: 1px;
+            background: var(--gold);
+        }
+        .hero-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 500;
+            font-size: clamp(48px, 8vw, 104px);
+            line-height: 0.95;
+            letter-spacing: -0.02em;
+            margin-bottom: 28px;
+        }
+        .hero-title em {
+            font-style: italic;
+            color: #f5d6a8;
+        }
+        .hero-sub {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 18px;
+            font-weight: 400;
+            max-width: 560px;
+            color: rgba(255, 255, 255, 0.88);
+            line-height: 1.7;
+            margin-bottom: 48px;
+        }
+        .hero-meta {
+            display: flex;
+            gap: 48px;
+            flex-wrap: wrap;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            padding-top: 32px;
+        }
+        .hero-meta-item {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+        .hero-meta-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 10px;
+            font-weight: 500;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(255, 255, 255, 0.55);
+        }
+        .hero-meta-value {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 500;
+            color: white;
+        }
+        .hero-meta-value small {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.7);
+            margin-left: 6px;
+        }
+
+        /* SECTIONS */
+        section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 32px;
+        }
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 64px;
+            gap: 32px;
+            flex-wrap: wrap;
+        }
+        .section-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-style: italic;
+            color: var(--accent);
+            letter-spacing: 0.1em;
+        }
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 500;
+            line-height: 1.05;
+            color: var(--ink);
+            letter-spacing: -0.01em;
+        }
+        .section-title em {
+            font-style: italic;
+            color: var(--accent);
+        }
+        .section-kicker {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            max-width: 280px;
+            text-align: right;
+            line-height: 1.6;
+        }
+
+        /* INTRO */
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 64px;
+            align-items: center;
+        }
+        .intro-text p {
+            font-size: 17px;
+            line-height: 1.85;
+            color: var(--ink-soft);
+            margin-bottom: 20px;
+        }
+        .intro-text p:first-of-type::first-letter {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 64px;
+            font-weight: 600;
+            float: left;
+            line-height: 0.9;
+            margin: 8px 12px 0 0;
+            color: var(--accent);
+        }
+        .intro-img {
+            aspect-ratio: 4/5;
+            background: url('https://picsum.photos/seed/shunde-dimsum/1200/1500') center/cover no-repeat;
+            border-radius: 4px;
+            box-shadow: var(--shadow-lg);
+        }
+
+        /* ITINERARY */
+        #itinerary {
+            background: var(--paper-warm);
+            max-width: none;
+            padding: 100px 0;
+        }
+        #itinerary .inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 32px;
+        }
+        .day-card {
+            background: var(--paper);
+            border-radius: 6px;
+            margin-bottom: 80px;
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+        }
+        .day-card:last-child { margin-bottom: 0; }
+        .day-head {
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 48px;
+            padding: 48px 56px 32px;
+            border-bottom: 1px solid var(--line);
+        }
+        .day-number {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 96px;
+            font-weight: 500;
+            line-height: 1;
+            color: var(--accent);
+            font-style: italic;
+            letter-spacing: -0.04em;
+        }
+        .day-info-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--ink-mute);
+            margin-bottom: 8px;
+        }
+        .day-info-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+        .day-info-sub {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 14px;
+            color: var(--ink-soft);
+            font-weight: 400;
+        }
+        .day-info-tags {
+            margin-top: 16px;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+        .tag {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 5px 12px;
+            background: var(--paper-warm);
+            color: var(--ink-soft);
+            border-radius: 100px;
+        }
+
+        /* TIMELINE */
+        .timeline {
+            padding: 32px 56px 56px;
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 86px;
+            top: 48px;
+            bottom: 56px;
+            width: 1px;
+            background: var(--line);
+        }
+        .stop {
+            display: grid;
+            grid-template-columns: 88px 1fr;
+            gap: 36px;
+            padding: 24px 0;
+            position: relative;
+        }
+        .stop-time {
+            text-align: right;
+            padding-top: 4px;
+        }
+        .stop-time-h {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            font-weight: 600;
+            color: var(--ink);
+            line-height: 1;
+        }
+        .stop-time-m {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 12px;
+            color: var(--ink-mute);
+            margin-top: 4px;
+            letter-spacing: 0.05em;
+        }
+        .stop-dot {
+            position: absolute;
+            left: 82px;
+            top: 32px;
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: var(--paper);
+            border: 2px solid var(--accent);
+            z-index: 1;
+        }
+        .stop-body {
+            padding-left: 0;
+        }
+        .stop-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+        .stop-title em {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 15px;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--accent);
+            margin-left: 8px;
+            letter-spacing: 0.02em;
+        }
+        .stop-desc {
+            font-size: 14px;
+            color: var(--ink-soft);
+            line-height: 1.75;
+            margin-bottom: 10px;
+        }
+        .stop-drive {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            padding: 6px 12px;
+            background: rgba(184, 115, 51, 0.10);
+            color: var(--accent);
+            border-radius: 4px;
+            margin-top: 6px;
+        }
+        .stop-drive svg {
+            width: 12px;
+            height: 12px;
+            flex-shrink: 0;
+        }
+        .stop-img {
+            margin-top: 18px;
+            border-radius: 4px;
+            overflow: hidden;
+            aspect-ratio: 21/9;
+        }
+        .stop-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+        .stop-img:hover img { transform: scale(1.04); }
+        .stop-img-caption {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-size: 13px;
+            color: var(--ink-mute);
+            margin-top: 8px;
+            letter-spacing: 0.02em;
+        }
+
+        /* LODGING */
+        .lodging-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            background: var(--ink);
+            color: white;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: var(--shadow-lg);
+        }
+        .lodging-img {
+            background: url('https://picsum.photos/seed/boshi-hotel/1200/900') center/cover no-repeat;
+            min-height: 420px;
+        }
+        .lodging-content {
+            padding: 64px 56px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .lodging-eyebrow {
+            font-family: 'Inter', sans-serif;
+            font-size: 11px;
+            letter-spacing: 0.25em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .lodging-name {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 36px;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 8px;
+        }
+        .lodging-name em {
+            font-family: 'Cormorant Garamond', serif;
+            font-style: italic;
+            font-weight: 500;
+            color: var(--gold);
+        }
+        .lodging-loc {
+            font-family: 'Inter', sans-serif;
+            font-size: 13px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 32px;
+            letter-spacing: 0.04em;
+        }
+        .lodging-features {
+            list-style: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.15);
+            padding-top: 24px;
+        }
+        .lodging-features li {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.85);
+            padding: 8px 0;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .lodging-features li::before {
+            content: '';
+            width: 5px;
+            height: 5px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        /* TIPS */
+        .tips-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+        .tip-card {
+            padding: 36px 32px;
+            background: white;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+        .tip-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .tip-num {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 14px;
+            font-style: italic;
+            color: var(--accent);
+            margin-bottom: 12px;
+            letter-spacing: 0.1em;
+        }
+        .tip-title {
+            font-family: 'Noto Serif SC', serif;
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: var(--ink);
+        }
+        .tip-desc {
+            font-size: 13px;
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--ink);
+            color: white;
+            padding: 64px 32px 40px;
+            text-align: center;
+        }
+        .footer-mark {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 32px;
+            font-style: italic;
+            color: var(--gold);
+            margin-bottom: 16px;
+        }
+        .footer-line {
+            font-family: 'Inter', sans-serif;
+            font-size: 12px;
+            color: rgba(255, 255, 255, 0.5);
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .nav-links { display: none; }
+            .hero-content { padding: 100px 24px 60px; }
+            .hero-meta { gap: 28px; }
+            section { padding: 70px 24px; }
+            .intro-grid,
+            .lodging-card,
+            .day-head,
+            .tips-grid {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+            .day-head { padding: 32px 28px 24px; }
+            .day-number { font-size: 64px; }
+            .day-info-title { font-size: 22px; }
+            .timeline { padding: 24px 28px 40px; }
+            .timeline::before { left: 60px; }
+            .stop { grid-template-columns: 60px 1fr; gap: 20px; }
+            .stop-dot { left: 56px; }
+            .stop-time-h { font-size: 20px; }
+            .lodging-img { min-height: 260px; }
+            .lodging-content { padding: 40px 28px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav class="nav">
+    <div class="nav-inner">
+        <div class="nav-brand">一期一會 <em>·</em> A6 搣柴誌</div>
+        <ul class="nav-links">
+            <li><a href="#intro">行程概覽</a></li>
+            <li><a href="#itinerary">每日路線</a></li>
+            <li><a href="#lodging">住宿</a></li>
+            <li><a href="#tips">預訂提醒</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+        <div class="hero-eyebrow">一期一會 · Ichigo Ichie</div>
+        <h1 class="hero-title">順德 <em>·</em> 一期一會</h1>
+        <p class="hero-sub">A6 兄弟姐妹，今夏聚於順德。<br>三日光陰，慢火私房菜、江畔日落、一場 Live、一頓打邊爐 —— <span style="color:#f0c674;">此聚不再。</span></p>
+        <div class="hero-meta">
+            <div class="hero-meta-item">
+                <div class="hero-meta-label">日期 Date</div>
+                <div class="hero-meta-value">6.30 – 7.2<small>2026</small></div>
+            </div>
+            <div class="hero-meta-item">
+                <div class="hero-meta-label">路線 Route</div>
+                <div class="hero-meta-value">HK → 順德<small>容桂 / 大良</small></div>
+            </div>
+            <div class="hero-meta-item">
+                <div class="hero-meta-label">住宿 Stay</div>
+                <div class="hero-meta-value">柏希酒店<small>德景一號</small></div>
+            </div>
+            <div class="hero-meta-item">
+                <div class="hero-meta-label">總車程 Drive</div>
+                <div class="hero-meta-value">≈ 4 小時<small>3 日合計</small></div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- INTRO -->
+<section id="intro">
+    <div class="section-head">
+        <div>
+            <div class="section-num">— I —</div>
+            <h2 class="section-title">搣柴，<em>為了這一期一會</em></h2>
+        </div>
+        <div class="section-kicker">A small gathering, drawn slowly — for those who seldom sit at the same table.</div>
+    </div>
+    <div class="intro-grid">
+        <div class="intro-text">
+            <p>茶道有云「一期一會」—— 同席共飲這回事，錯過就係錯過。A6 兄弟姐妹散落各地，今夏搣返一聚，揀咗順德：粵菜真正的底色藏喺呢度嘅街巷同庭院，聯合國教科文組織都封佢做「美食之都」。</p>
+            <p>三日嘅步伐刻意放慢：午間室內避暑、傍晚先出門追光、私房菜提前訂位、KTV 換成 Live 場。唔趕景點，只追一頓對嘅晚餐、一個對嘅夜色、一班對嘅人。</p>
+        </div>
+        <div class="intro-img" role="img" aria-label="順德私房菜擺盤"></div>
+    </div>
+</section>
+
+<!-- ITINERARY -->
+<section id="itinerary">
+    <div class="inner">
+        <div class="section-head">
+            <div>
+                <div class="section-num">— II —</div>
+                <h2 class="section-title">三日<em>逐站紀行</em></h2>
+            </div>
+            <div class="section-kicker">Times shown in 24h. Driving legs highlighted in red.</div>
+        </div>
+
+        <!-- DAY 1 -->
+        <article class="day-card">
+            <div class="day-head">
+                <div class="day-number">01</div>
+                <div>
+                    <div class="day-info-label">Day One · June 30 · Tue</div>
+                    <h3 class="day-info-title">聚 · 江畔初見</h3>
+                    <p class="day-info-sub">跨城自駕 · 容桂集合 · 江邊黃昏</p>
+                    <div class="day-info-tags">
+                        <span class="tag">🚗 過關自駕</span>
+                        <span class="tag">🌆 江畔日落</span>
+                        <span class="tag">🎡 摩天輪夜景</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">10:00</div><div class="stop-time-m">DEPART</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">香港自駕出發<em>Across the Bridge</em></div>
+                        <p class="stop-desc">港珠澳大橋通關，預約時段 + 駕駛 + 休息，純駕駛約 2 小時 20 分，建議預留 3 小時 buffer。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">13:00</div><div class="stop-time-m">ARRIVE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">抵達柏希酒店 · 辦理入住</div>
+                        <p class="stop-desc">容桂德景一號，停車入庫，先休息一會兒再出門。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">13:00</div><div class="stop-time-m">LUNCH</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">豬肉婆 · 德景軒私房菜<em>酒店 4 樓 · 免開車</em></div>
+                        <p class="stop-desc">順德經典私房菜，招牌燒鵝與拆魚羹，下樓即食最從容。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">14:30</div><div class="stop-time-m">— 17:30</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">容桂漁人碼頭<em>Ronggui Wharf</em></div>
+                        <p class="stop-desc">步行直達，江邊有蔭。舊船廠改造的文創街區，可隨時入室避暑。</p>
+                        <div class="stop-img">
+                            <img src="https://picsum.photos/seed/ronggui-wharf/1600/720" alt="容桂漁人碼頭江邊">
+                            <div class="stop-img-caption">Ronggui Wharf · 黃昏前的江風最舒服</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">18:00</div><div class="stop-time-m">DRIVE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕前往 大良歡樂海岸 PLUS</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            15 分鐘車程
+                        </span>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">18:15</div><div class="stop-time-m">— 19:20</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">曲水灣戶外街區 · 摩天輪日落<em>Sunset Hour</em></div>
+                        <p class="stop-desc">藍調時分登摩天輪，整個順德新城的天際線在腳下展開。</p>
+                        <div class="stop-img">
+                            <img src="https://picsum.photos/seed/ferris-sunset/1600/720" alt="歡樂海岸摩天輪夜景">
+                            <div class="stop-img-caption">Sunset Wheel · 等天色從橘轉紫的那十五分鐘</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">19:30</div><div class="stop-time-m">DRIVE · DINE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕 → 容邊排骨飯（二店）</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            20 分鐘車程
+                        </span>
+                        <p class="stop-desc" style="margin-top: 10px;">19:50–20:50 晚飯，招牌排骨蒸鳳爪，米飯記得多添一碗。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">21:00</div><div class="stop-time-m">DRIVE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">返回漁人碼頭 · KTV</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            8 分鐘車程
+                        </span>
+                        <p class="stop-desc" style="margin-top: 10px;">21:10 開唱，盡興後步行回酒店。</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- DAY 2 -->
+        <article class="day-card">
+            <div class="day-head">
+                <div class="day-number">02</div>
+                <div>
+                    <div class="day-info-label">Day Two · July 1 · Wed</div>
+                    <h3 class="day-info-title">聚 · 庭院長桌</h3>
+                    <p class="day-info-sub">大良全日 · 庭院私房菜 · Live 夜</p>
+                    <div class="day-info-tags">
+                        <span class="tag">💆 SPA / 影院沐足</span>
+                        <span class="tag">🍃 庭院晚餐</span>
+                        <span class="tag">🎸 Live 現場</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">09:40</div><div class="stop-time-m">DRIVE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕前往 大良城區</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            20 分鐘車程
+                        </span>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">10:00</div><div class="stop-time-m">— 12:30</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">上午室內項目<em>SPA / 影院沐足 / 下午茶 · 10 選 1</em></div>
+                        <p class="stop-desc">七月的順德中午太熱，把體力留給傍晚。挑一間冷氣房放空兩個半小時。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">12:30</div><div class="stop-time-m">— 14:30</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">大良午市粵菜正餐</div>
+                        <p class="stop-desc">老字號粵菜，午市菜單價格更親民，份量也紮實。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">15:00</div><div class="stop-time-m">— 18:00</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">下午戶外 · 順德十景任選</div>
+                        <p class="stop-desc">順峰山公園、清暉園、華蓋山棧道、金榜上街⋯⋯挑一兩個就好，不必全收。</p>
+                        <div class="stop-img">
+                            <img src="https://picsum.photos/seed/lingnan-garden/1600/720" alt="順德嶺南園林">
+                            <div class="stop-img-caption">Lingnan Garden · 庭院裡的光影節奏</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">18:20</div><div class="stop-time-m">DRIVE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕 → 溢和苑私房菜（錦岩店）</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            10 分鐘車程
+                        </span>
+                        <p class="stop-desc" style="margin-top: 10px;">18:30–20:00 庭院晚餐 — <strong style="color: var(--accent);">必須提前訂位</strong>。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">20:20</div><div class="stop-time-m">DRIVE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕 → 拾叁唐 LiveShow（歡樂海岸店）</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            12 分鐘車程
+                        </span>
+                        <p class="stop-desc" style="margin-top: 10px;">20:30 開演 — <strong style="color: var(--accent);">週六卡座緊張，務必提前預訂</strong>。</p>
+                        <div class="stop-img">
+                            <img src="https://picsum.photos/seed/live-music-night/1600/720" alt="Live 音樂現場">
+                            <div class="stop-img-caption">Live Night · 室內燈光、低頻、人聲的混合體</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">凌晨</div><div class="stop-time-m">DRIVE BACK</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕返回 柏希酒店</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            22 分鐘車程
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </article>
+
+        <!-- DAY 3 -->
+        <article class="day-card">
+            <div class="day-head">
+                <div class="day-number">03</div>
+                <div>
+                    <div class="day-info-label">Day Three · July 2 · Thu</div>
+                    <h3 class="day-info-title">散 · 一期再會</h3>
+                    <p class="day-info-sub">和美術館 · 清水打邊爐 · 返港</p>
+                    <div class="day-info-tags">
+                        <span class="tag">🏛 室內觀展</span>
+                        <span class="tag">🍲 包廂午餐</span>
+                        <span class="tag">🏠 返港</span>
+                    </div>
+                </div>
+            </div>
+            <div class="timeline">
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">10:00</div><div class="stop-time-m">DRIVE</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕前往 北滘 · 和美術館</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            30 分鐘車程
+                        </span>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">10:30</div><div class="stop-time-m">— 12:00</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">和美術館<em>He Art Museum · Tadao Ando</em></div>
+                        <p class="stop-desc">安藤忠雄在中國的第一座美術館，雙圓樓梯是鎮館畫面，全程冷氣，宜返程前最後一次文化行程。</p>
+                        <div class="stop-img">
+                            <img src="https://picsum.photos/seed/ando-concrete/1600/720" alt="和美術館">
+                            <div class="stop-img-caption">He Art Museum · 清水模的呼吸感</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">12:15</div><div class="stop-time-m">DRIVE BACK</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">自駕返回 容桂 · 午餐</div>
+                        <span class="stop-drive">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+                            35 分鐘車程
+                        </span>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">12:50</div><div class="stop-time-m">— 14:30</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">松記清水打邊爐 · 包廂</div>
+                        <p class="stop-desc">最後一頓用最清淡的水準收尾。牛肉片與豬肝現切，清水鍋底吃的是食材本身。</p>
+                    </div>
+                </div>
+                <div class="stop">
+                    <div class="stop-time"><div class="stop-time-h">下午</div><div class="stop-time-m">RETURN</div></div>
+                    <div class="stop-dot"></div>
+                    <div class="stop-body">
+                        <div class="stop-title">退房 · 自駕返回香港</div>
+                        <p class="stop-desc">預留 3.5–4 小時，含大橋通關 + 緩衝。</p>
+                    </div>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+
+<!-- LODGING -->
+<section id="lodging">
+    <div class="section-head">
+        <div>
+            <div class="section-num">— III —</div>
+            <h2 class="section-title">三晚的<em>落腳處</em></h2>
+        </div>
+        <div class="section-kicker">One base, three nights — close to Ronggui Wharf so dinners and late returns stay easy.</div>
+    </div>
+    <div class="lodging-card">
+        <div class="lodging-img" role="img" aria-label="柏希酒店"></div>
+        <div class="lodging-content">
+            <div class="lodging-eyebrow">Where we stayed</div>
+            <h3 class="lodging-name">佛山柏希酒店 <em>Boshi Hotel</em></h3>
+            <div class="lodging-loc">FOSHAN · 容桂 · 德景一號</div>
+            <ul class="lodging-features">
+                <li>步行可達容桂漁人碼頭</li>
+                <li>樓下即豬肉婆私房菜（4 樓）</li>
+                <li>自駕 8 分鐘回 KTV / 漁人碼頭</li>
+                <li>回港最後一晚最便利</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<!-- TIPS -->
+<section id="tips">
+    <div class="section-head">
+        <div>
+            <div class="section-num">— IV —</div>
+            <h2 class="section-title">聚前<em>三件瑣事</em></h2>
+        </div>
+        <div class="section-kicker">Three small locks — set them, then forget them, then meet.</div>
+    </div>
+    <div class="tips-grid">
+        <div class="tip-card">
+            <div class="tip-num">— 01 —</div>
+            <div class="tip-title">拾叁唐卡座</div>
+            <p class="tip-desc">週六 Live 場最旺，卡座與散座都要提前一週以上電話鎖位。建議 20:00 前到位，A6 全員先集合。</p>
+        </div>
+        <div class="tip-card">
+            <div class="tip-num">— 02 —</div>
+            <div class="tip-title">溢和苑庭院</div>
+            <p class="tip-desc">庭院席位必須電話預約。雨天會調整到室內廳，提前確認當日安排。</p>
+        </div>
+        <div class="tip-card">
+            <div class="tip-num">— 03 —</div>
+            <div class="tip-title">港車北上通關</div>
+            <p class="tip-desc">大橋口岸提前預約時段，留 30 分鐘 buffer。週末名額易滿，盡量約早段。</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="footer-mark">— 一期一會 —</div>
+    <div class="footer-line">A6 · 順德三日 · 搣柴誌 No.01 · 💛</div>
+</footer>
+
+</body>
+</html>
